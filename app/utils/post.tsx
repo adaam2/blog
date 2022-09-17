@@ -2,7 +2,9 @@ import parseFrontMatter from "front-matter";
 import fs from "fs/promises";
 import path from "path";
 import { bundleMDX } from "./mdx.server";
-import haskell from "highlight.js/lib/languages/haskell";
+import javascript from "highlight.js/lib/languages/javascript";
+import typescript from "highlight.js/lib/languages/typescript";
+import ruby from "highlight.js/lib/languages/ruby";
 
 export type Post = {
   slug: string;
@@ -18,9 +20,9 @@ export async function getPost(slug: string) {
     path.join(`${__dirname}/../../blog-posts`, slug + ".mdx"),
     "utf-8"
   );
-  const rehypeHighlight = await import("rehype-highlight").then(
-    (mod) => mod.default
-  );
+  const [rehypeHighlight] = await Promise.all([
+    import("rehype-highlight").then(mod => mod.default),
+  ]);
   const { default: remarkGfm } = await import("remark-gfm");
   const { default: rehypeAutolinkHeadings } = await import(
     "rehype-autolink-headings"
@@ -46,7 +48,7 @@ export async function getPost(slug: string) {
         rehypeToc,
         [
           rehypeHighlight,
-          { format: "detect", ignoreMissing: true, languages: { haskell } },
+          { format: "detect", ignoreMissing: true, languages: { javascript, typescript, ruby } },
         ],
       ];
 

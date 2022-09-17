@@ -1,7 +1,8 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
-import { json, Link, LoaderFunction, useLoaderData } from "remix";
+import { json, Link, LoaderFunction, useLoaderData, useParams } from "remix";
 import { getPost } from "~/utils/post";
+import 'highlight.js/styles/default.css';
 
 type LoaderData = {
   frontmatter: any;
@@ -12,12 +13,38 @@ export const loader: LoaderFunction = async ({ params, request }) => {
   const slug = params["*"];
   if (!slug) throw new Response("Not found", { status: 404 });
 
-  const post = await getPost(slug);
-  if (post) {
-    const { frontmatter, code } = post;
-    return json({ frontmatter, code });
+  try {
+    const post = await getPost(slug);
+
+    if (post) {
+      const { frontmatter, code } = post;
+
+      return json({ frontmatter, code });
+    }
+  } catch (e) {
+    throw new Response("Not found", { status: 404 });
   }
 };
+
+export function CatchBoundary() {
+  const params = useParams();
+
+  return (
+    <div>
+      <h2>No post matching '{params['*']}'!</h2>
+
+    </div>
+  );
+}
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-lakeside.dark.css",
+    },
+  ];
+}
 
 export default function Post() {
   const { code, frontmatter } = useLoaderData<LoaderData>();
@@ -48,7 +75,6 @@ export default function Post() {
       <h1 className="my-20">{frontmatter.title}</h1>
 
       <Component attributes={frontmatter} />
-      {/* <div className="hero">Sign up to get notified about new posts.</div> */}
     </>
   );
 }
