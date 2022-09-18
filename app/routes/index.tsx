@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "remix";
+import styled from 'styled-components'
 
-import Card, { CardGrid } from '~/components/Card'
 import { getPosts } from "~/utils/post";
 import type { Post } from "~/utils/post";
 
@@ -8,18 +8,29 @@ export const loader = async () => {
   return getPosts();
 };
 
+
+const List = styled.ul`
+  list-style-type: square;
+`
+const ListItem = styled.li`
+  a {
+    color: white;
+    font-weight: 400;
+  }
+`
+
 export default function Posts() {
   const posts = useLoaderData<Post[]>();
 
   return (
-    <CardGrid>
+    <List>
       {posts.map((post) => (
-        <Link key={post.slug} to={post.slug}>
-          <Card label={new Date(post.date).toLocaleDateString()} title={post.slug}>
-            {post.title}
-          </Card>
-        </Link>
+        <ListItem>
+          <Link to={post.slug}>
+            [{new Date(post.date).toLocaleDateString()}] {post.title}
+          </Link>
+        </ListItem>
       ))}
-    </CardGrid>
+    </List>
   );
 }

@@ -4,12 +4,8 @@ import styled from 'styled-components'
 import theme from '~/theme'
 
 const El = styled.main`
-  max-width: 1200px;
-  margin: 20px 10px;
-
-  @media screen and (max-width: 960px) {
-    max-width: 960px;
-  }
+  max-width: 80%;
+  margin: 20px auto;
 `
 
 interface MainProps {
