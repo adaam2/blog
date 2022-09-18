@@ -9,7 +9,7 @@ import {
 import type { MetaFunction } from "remix";
 import Main from "./layouts";
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import theme, { Theme } from './theme'
+import theme from './theme'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -26,38 +26,31 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1.10;
-    font-weight: 900;
-    letter-spacing: 0.05px;
-  }
-
   p {
     line-height: 1.75;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    margin: 3rem 0 1.38rem;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+
   h1 {
-    font-size: 46.83px;
+    margin-top: 0;
+    font-size: 3.052rem;
   }
 
-  h2 {
-    font-size: 37.06px;
-  }
+  h2 {font-size: 2.441rem;}
 
-  h3 {
-    font-size: 29.25px;
-  }
+  h3 {font-size: 1.953rem;}
 
-  h4 {
-    font-size: 23px;
-  }
+  h4 {font-size: 1.563rem;}
 
-  h5 {
-    font-size: 18px;
-  }
+  h5 {font-size: 1.25rem;}
 
   h6 {
-    font-size: 14px;
+    font-size: 1rem;
   }
 
   a {
