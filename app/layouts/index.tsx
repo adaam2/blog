@@ -25,6 +25,7 @@ interface AccentedLetterProps {
 
 const AccentedLetter = styled.span<AccentedLetterProps>`
   display: inline;
+  text-transform: uppercase;
   color: ${({ color }) => (theme.palette.accents as any)[color]};
 `
 
@@ -34,8 +35,32 @@ const Nav = () => {
       <NavBrand>
         <Link to="/">
           <h1>
+            <AccentedLetter color="red">
+              a
+            </AccentedLetter>
+            <AccentedLetter color="red">
+              d
+            </AccentedLetter>
+            <AccentedLetter color="red">
+              a
+            </AccentedLetter>
+            <AccentedLetter color="red">
+              m&nbsp;
+            </AccentedLetter>
             <AccentedLetter color="green">
-              a&nbsp;
+              j
+            </AccentedLetter>
+            <AccentedLetter color="green">
+              a
+            </AccentedLetter>
+            <AccentedLetter color="green">
+              m
+            </AccentedLetter>
+            <AccentedLetter color="green">
+              e
+            </AccentedLetter>
+            <AccentedLetter color="green">
+              s&nbsp;
             </AccentedLetter>
             <AccentedLetter color="yellow">
               b

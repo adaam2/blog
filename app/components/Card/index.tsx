@@ -15,8 +15,8 @@ const Wrapper = styled.div`
 
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) => theme.palette.fg};
-    background: ${({ theme }) => theme.palette.accents.green};
+    color: ${({ theme }) => theme.palette.fgAlternate};
+    background: ${({ theme }) => theme.palette.fg};
   }
 `
 

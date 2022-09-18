@@ -9,7 +9,7 @@ import {
 import type { MetaFunction } from "remix";
 import Main from "./layouts";
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import theme from './theme'
+import theme, { Theme } from './theme'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -31,6 +31,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 900;
     margin: 3rem 0 1.38rem;
     letter-spacing: 0.05px;
+  }
+
+  p {
+    line-height: 1.75;
   }
 
   h1 {
@@ -59,12 +63,13 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: ${theme.palette.accents.yellow};
+    font-weight: 600;
   }
 `
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "adaam.co.uk" };
 };
 
 export default function App() {
@@ -75,7 +80,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet" />
         <Meta />
         <Links />
         <GlobalStyle />
