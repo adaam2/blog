@@ -5,7 +5,11 @@ import theme from '~/theme'
 
 const El = styled.main`
   max-width: 1200px;
-  margin: 100px auto;
+  margin: 20px 10px;
+
+  @media screen and (max-width: 960px) {
+    max-width: 960px;
+  }
 `
 
 interface MainProps {
@@ -16,6 +20,12 @@ const NavEl = styled.nav``;
 const NavBrand = styled.div`
   h1 {
     letter-spacing: .1px;
+  }
+
+  @media screen and (max-width: 960px) {
+    h1 {
+      font-size: 8vw;
+    }
   }
 `
 

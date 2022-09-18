@@ -56,6 +56,10 @@ const CardGridWrapper = styled.div`
   margin: 50px 0;
   grid-template-columns: 1fr 1fr;
   grid-gap: 25px;
+
+  @media screen and (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 interface CardGridProps extends WithChildrenProps {
