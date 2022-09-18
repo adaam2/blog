@@ -1,6 +1,6 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
-import { json, Link, LoaderFunction, useLoaderData, useParams } from "remix";
+import { json, LoaderFunction, useLoaderData, useParams } from "remix";
 import { getPost } from "~/utils/post";
 import 'highlight.js/styles/default.css';
 
@@ -41,7 +41,7 @@ export function links() {
   return [
     {
       rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-lakeside.dark.css",
+      href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css",
     },
   ];
 }
@@ -52,7 +52,6 @@ export default function Post() {
 
   return (
     <>
-      <Link to="/">← Back to blog index</Link>
       {frontmatter.image && (
         <div className="mb-6 -mt-6">
           <div className="text-center">

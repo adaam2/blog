@@ -9,6 +9,7 @@ import ruby from "highlight.js/lib/languages/ruby";
 export type Post = {
   slug: string;
   title: string;
+  date: Date;
 };
 
 export type PostMarkdownAttributes = {
@@ -77,6 +78,8 @@ export async function getPosts() {
         slug: dirent.name.replace(/\.mdx/, ""),
         //@ts-ignore
         title: attributes.title,
+        //@ts-ignore
+        date: Date.parse(attributes.date)
       };
     })
   );
