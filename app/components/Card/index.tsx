@@ -53,7 +53,7 @@ const Card = ({ children, title, label }: CardProps) => {
 
 const CardGridWrapper = styled.div`
   display: grid;
-  margin: 50px 0;
+  margin: 10px 0;
   grid-template-columns: 1fr 1fr;
   grid-gap: 25px;
 

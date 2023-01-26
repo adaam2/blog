@@ -1,7 +1,6 @@
 import { ReactElement } from "react"
 import { Link } from "react-router-dom"
 import styled from 'styled-components'
-import theme from '~/theme'
 
 const El = styled.div`
   max-width: 1200px;
@@ -19,7 +18,6 @@ interface MainProps {
 
 const NavEl = styled.nav`
   border-bottom: 1px solid white;
-  margin-bottom: 50px;
 `;
 
 const NavBrand = styled.div`
@@ -34,32 +32,13 @@ const NavBrand = styled.div`
   }
 `
 
-interface AccentedLetterProps {
-  color: string
-}
-
-const AccentedLetter = styled.span<AccentedLetterProps>`
-  display: inline;
-  text-transform: uppercase;
-  margin-right: 4px;
-  color: ${({ color }) => (theme.palette.accents as any)[color]};
-`
-
 const Nav = () => {
   return (
     <NavEl>
       <NavBrand>
         <Link to="/">
           <h1>
-            <AccentedLetter color="red">
-              adam
-            </AccentedLetter>
-            <AccentedLetter color="green">
-              james
-            </AccentedLetter>
-            <AccentedLetter color="yellow">
-              bull
-            </AccentedLetter>
+            ajb
           </h1>
         </Link>
       </NavBrand>

@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "remix";
+import { Link, useLoaderData } from "@remix-run/react";
 import styled from 'styled-components'
 
 import { getPosts } from "~/utils/post";
@@ -10,11 +10,10 @@ export const loader = async () => {
 
 
 const List = styled.ul`
-  list-style-type: "😎 ";
+  list-style-type: disc;
 `
 const ListItem = styled.li`
   a {
-    color: white;
     font-weight: 400;
   }
 `
@@ -28,17 +27,17 @@ export default function Posts() {
         Bonjour
       </h2>
       <p>
-        Welcome to my website. It's a bit bare at the moment as "cool shit" is currently gestating behind the scenes, but <em>for now</em>, you're stuck with this steaming pile of crap. Enjoy!
+        Welcome to my website. It's a bit bare at the moment as "cool shit" is currently gestating behind the scenes, but <em>for now</em>, I'm afraid that you're stuck with this. Enjoy! 😊
       </p>
 
       <h2>
-        I (sometimes) write...
+        I (rarely) write...
       </h2>
       <List>
         {posts.map((post) => (
           <ListItem>
             <Link to={post.slug}>
-              <em>{post.title} (published {new Date(post.date).toLocaleDateString()})</em>
+              {post.title} (published {new Date(post.date).toLocaleDateString()})
             </Link>
           </ListItem>
         ))}
