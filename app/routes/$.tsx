@@ -1,6 +1,7 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
-import { json, LoaderFunction, useLoaderData, useParams } from "remix";
+import { useLoaderData, useParams } from "@remix-run/react";
+import { json, LoaderFunction } from '@remix-run/node'
 import { getPost } from "~/utils/post";
 import 'highlight.js/styles/default.css';
 
