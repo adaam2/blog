@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { getPosts } from "~/utils/post";
 import type { Post } from "~/utils/post";
+import theme from "~/theme";
 
 export const loader = async () => {
   return getPosts();
@@ -18,30 +19,71 @@ const ListItem = styled.li`
   }
 `
 
+const Divider = styled.hr`
+  margin: 20px 0;
+  border: 1px solid #fafafa;
+`;
+
+const IntroArea = styled.div`
+  margin-bottom: 30px;
+
+  h2 {
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 0;
+    color: ${theme.palette.accents.grey};
+
+    span {
+      &:after {
+        content: '•';
+        width: 5px;
+        margin-right: 7px;
+        margin-left: 7px;
+        color: ${theme.palette.accents.grey};
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+`;
+
 export default function Posts() {
   const posts = useLoaderData<Post[]>();
 
   return (
     <>
-      <h2>
-        Bonjour
-      </h2>
+      <IntroArea>
+        <h2>
+          adam bull
+        </h2>
+
+        <p>
+          <span>
+            Founding Software Engineer at <a target="_blank" href="https://keel.xyz">keel.xyz</a>
+          </span>
+          <span>
+            Poole, United Kingdom
+          </span>
+        </p>
+
+        <Divider />
+      </IntroArea>
+
       <p>
         Welcome to my website. It's a bit bare at the moment as "cool shit" is currently gestating behind the scenes, but <em>for now</em>, I'm afraid that you're stuck with this. Enjoy! 😊
       </p>
 
-      <h2>
-        I (rarely) write...
-      </h2>
-      <List>
-        {posts.map((post) => (
-          <ListItem>
-            <Link to={post.slug}>
-              {post.title} (published {new Date(post.date).toLocaleDateString()})
-            </Link>
-          </ListItem>
-        ))}
-      </List>
+      <p>
+        Adam
+        <br/>
+        xxx
+      </p>
     </>
   );
 }
