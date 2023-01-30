@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import styled from 'styled-components'
 
 import { getPosts } from "~/utils/post";
@@ -9,16 +9,6 @@ export const loader = async () => {
   return getPosts();
 };
 
-
-const List = styled.ul`
-  list-style-type: disc;
-`
-const ListItem = styled.li`
-  a {
-    font-weight: 400;
-  }
-`
-
 const Divider = styled.hr`
   margin: 20px 0;
   border: 1px solid #fafafa;
@@ -26,8 +16,12 @@ const Divider = styled.hr`
 
 const IntroArea = styled.div`
   margin-bottom: 30px;
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
 
   h2 {
+    margin-top: 0;
     margin-bottom: 5px;
   }
 
@@ -53,12 +47,26 @@ const IntroArea = styled.div`
   }
 `;
 
+const Avatar = styled.img`
+  max-width: 65px;
+  border-radius: 50%;
+  padding: 3px;
+  border: 3px solid #f2f2f2;
+  margin-left: auto;
+`
+
+const IntroBlock = styled.div`
+  display: flex;
+  flex-flow: column;
+`
+
 export default function Posts() {
   const posts = useLoaderData<Post[]>();
 
   return (
     <>
       <IntroArea>
+        <IntroBlock>
         <h2>
           adam bull
         </h2>
@@ -71,12 +79,18 @@ export default function Posts() {
             Poole, United Kingdom
           </span>
         </p>
+        </IntroBlock>
+        <Avatar src="https://avatars.githubusercontent.com/u/2907389?v=4"/>
 
         <Divider />
       </IntroArea>
 
       <p>
-        Welcome to my website. It's a bit bare at the moment as "cool shit" is currently gestating behind the scenes, but <em>for now</em>, I'm afraid that you're stuck with this. Enjoy! 😊
+        I am an experienced software engineer with a particular interest in the developer tooling space. At the moment I am working with the lovely people at <a href="keel.xyz" target="_blank">Keel</a> - we're building a declarative schema language and accompanying runtime from scratch, which will remove a significant amount of complexity in development of backend services, and allow teams to focus on creating delightful experiences for their users. 
+      </p>
+
+      <p>
+        I love to work in languages that place a focus on great developer experience - some of my favourites are TypeScript, Ruby and Golang. At the moment, I'm mostly working in Go and TypeScript at work. At home, I've been hacking with Rust.
       </p>
 
       <p>
