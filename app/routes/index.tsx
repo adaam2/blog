@@ -7,6 +7,7 @@ import theme from "~/theme";
 
 export const loader = async () => {
   // return getPosts();
+  return null
 };
 
 const Divider = styled.hr`
