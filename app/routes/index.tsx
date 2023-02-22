@@ -1,12 +1,12 @@
 import { useLoaderData } from "@remix-run/react";
 import styled from 'styled-components'
 
-import { getPosts } from "~/utils/post";
+// import { getPosts } from "~/utils/post";
 import type { Post } from "~/utils/post";
 import theme from "~/theme";
 
 export const loader = async () => {
-  return getPosts();
+  // return getPosts();
 };
 
 const Divider = styled.hr`
