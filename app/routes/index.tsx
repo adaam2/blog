@@ -86,11 +86,15 @@ export default function Posts() {
       </IntroArea>
 
       <p>
-        I am an experienced software engineer with a particular interest in the developer tooling space. At the moment I am working with the lovely people at <a href="keel.xyz" target="_blank">Keel</a> - we're building a declarative schema language and accompanying runtime from scratch, which will remove a significant amount of complexity in development of backend services, and allow teams to focus on creating delightful experiences for their users. 
+        I am an experienced polyglot software engineer with a particular interest in the developer tooling space. I've worked at a wide range of startups, ranging from tiny teams of two or three people to massive corporations of thousands of people.
       </p>
 
       <p>
-        I love to work in languages that place a focus on great developer experience - some of my favourites are TypeScript, Ruby and Golang. At the moment, I'm mostly working in Go and TypeScript at work. At home, I've been hacking with Rust.
+        At the moment I am working with the lovely people at <a href="keel.xyz" target="_blank">keel.xyz</a> - we're building a declarative schema language and accompanying runtime from scratch, which will remove a significant amount of complexity in development of backend services, and allow teams to focus on creating delightful experiences for their users.
+      </p>
+
+      <p>
+        I love to work in languages that prioritize great developer experience - some of my favourites are Ruby and Golang. At the moment, I'm mostly working in Golang and TypeScript in a professional capacity. At home, well, I have a newborn, so there is no coding in my personal time anymore!!
       </p>
 
       <p>
