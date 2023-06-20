@@ -2,14 +2,11 @@ const theme = {
   palette: {
     bg: "#fff",
     fg: "#666",
+    headingColor: "#241c15",
     fgAlternate: "#3d5a80",
-    accents: {
-      green: "#60d394",
-      yellow: "#e9c46a",
-      orange: "#f4a261",
-      red: "#e76f51",
-      blue: "#2E8BC0",
-      grey: "#888",
+    headers: {
+      lime: "#d8eacc",
+      lavender: "#fbf5fe",
     },
   },
 };

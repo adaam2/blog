@@ -1,15 +1,40 @@
 import { type MetaFunction } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "@remix-run/react";
 import Main from "./layouts";
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import theme from './theme'
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: Adaam;
+    src: url(/font.woff2) format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: AdaamLight;
+    src: url(/font-light.woff2) format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+  }
+
   body {
     line-height: 1.5;
-    font-family: 'IM Fell French Canon', serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
     tab-size: 4;
     font-size: 18px;
+    font-family: 'Oxygen', sans-serif;
     background: ${theme.palette.bg};
     color: ${theme.palette.fg};
   }
@@ -24,9 +49,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: Adaam, serif;
     margin: 1.38rem 0 1.38rem;
-    font-weight: 900;
+    color: ${theme.palette.headingColor};
     line-height: 1.3;
+    letter-spacing: -.0125rem;
   }
 
   h1 {
@@ -48,10 +75,10 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${theme.palette.accents.blue};
+    color: #009AD7;
     font-weight: 600;
   }
-`
+`;
 
 export const meta: MetaFunction = () => {
   return { title: "adaam.co.uk" };
@@ -64,14 +91,27 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap" rel="stylesheet" />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/font.woff2"
+          crossOrigin=""
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Oxygen:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
         <Meta />
         <Links />
         <GlobalStyle />
-        {typeof document === "undefined"
-          ? "__STYLES__"
-          : null}
+        {typeof document === "undefined" ? "__STYLES__" : null}
       </head>
       <body>
         <ThemeProvider theme={theme}>
