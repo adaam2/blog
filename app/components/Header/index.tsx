@@ -15,7 +15,7 @@ const LogoLinks = styled.span`
     margin-right: 15px;
 
     i {
-      font-size: 45px;
+      font-size: 40px;
       color: #666 !important;
     }
 
@@ -42,8 +42,7 @@ const El = styled.div`
 `;
 
 const Divider = styled.hr`
-  margin: 20px 0;
-  border: 1px solid #fafafa;
+  margin: 10px 0;
 `;
 
 const IntroBlock = styled.div`
@@ -55,7 +54,10 @@ const IntroBlock = styled.div`
 
   @media screen and (max-width: 960px) {
     max-width: 900px;
-    margin: 25px 20px;
+  }
+
+  @media screen and (max-width: 660px) {
+    max-width: 600px;
   }
 
   h1,

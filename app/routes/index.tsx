@@ -1,6 +1,7 @@
 // import { useLoaderData } from "@remix-run/react";
 
 // import { getPosts } from "~/utils/post";
+import Footer from "~/components/Footer";
 import Header from "~/components/Header";
 // import type { Post } from "~/utils/post";
 import Content from "~/layouts/content";
@@ -48,6 +49,8 @@ export default function Posts() {
           xxx
         </p>
       </Content>
+
+      <Footer></Footer>
     </>
   );
 }

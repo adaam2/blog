@@ -16,6 +16,10 @@ const El = styled.div`
     margin: 0 40px;
     margin-bottom: 100px;
   }
+
+  @media screen and (max-width: 660px) {
+    max-width: 600px;
+  }
 `;
 
 const Content = ({ children }: ContentProps) => <El>{children}</El>;
