@@ -8,10 +8,29 @@ const Avatar = styled.img`
   border: 3px solid #f2f2f2;
 `;
 
+const LogoLinks = styled.span`
+  display: inline-flex;
+
+  a {
+    margin-right: 15px;
+
+    i {
+      font-size: 45px;
+      color: #666 !important;
+    }
+
+    &:hover {
+      i {
+        color: initial !important;
+      }
+    }
+  }
+`;
+
 const El = styled.div`
   margin-bottom: 60px;
   padding: 1em;
-  background: ${theme.palette.headers.lavender};
+  background: ${theme.palette.headers.lime};
   display: flex;
   flex-flow: row;
   justify-content: center;
@@ -62,9 +81,17 @@ const Header = () => (
           </a>
         </span>
       </p>
-    </IntroBlock>
 
-    <Divider />
+      <Divider />
+      <LogoLinks>
+        <a target="_blank" href="https://github.com/adaam2">
+          <i className="devicon-github-original colored"></i>
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/adaam2/">
+          <i className="devicon-linkedin-plain"></i>
+        </a>
+      </LogoLinks>
+    </IntroBlock>
   </El>
 );
 
