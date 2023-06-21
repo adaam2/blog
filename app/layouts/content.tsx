@@ -13,7 +13,7 @@ const El = styled.div`
 
   @media screen and (max-width: 960px) {
     max-width: 900px;
-    margin: 0 40px;
+    margin: 0 20px;
     margin-bottom: 100px;
   }
 
