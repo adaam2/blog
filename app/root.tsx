@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 1.38rem 0 1.38rem;
     color: ${theme.palette.headingColor};
     line-height: 1.3;
-    letter-spacing: -.0125rem;
+    letter-spacing: -0.35px;
   }
 
   h1 {
