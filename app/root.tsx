@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
     margin: 0;
     tab-size: 4;
     font-size: 18px;
