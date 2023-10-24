@@ -7,8 +7,7 @@ interface ContentProps {
 
 const El = styled.div`
   max-width: 960px;
-  margin: 0 auto;
-  padding: 1em;
+  margin: 100px auto;
   margin-bottom: 150px;
 
   @media screen and (max-width: 960px) {
