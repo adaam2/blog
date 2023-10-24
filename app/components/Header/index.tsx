@@ -29,6 +29,8 @@ const LogoLinks = styled.span`
 
 const El = styled.div`
   margin-bottom: 60px;
+  box-sizing: border-box;
+  height: calc(100vh - 100px);
   padding: 1em;
   background: ${theme.palette.headers.lime};
   display: flex;
